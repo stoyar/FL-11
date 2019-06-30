@@ -126,6 +126,9 @@ div.cut-div {
     width: 50%;
     min-width: 600px;
 }
+div.featured-article-left, div.featured-article-right {
+    width: 100%;
+}
 .featured-article-left .image-place {
     background: url(../img/sample-1.jpg);
     background-size: cover;
