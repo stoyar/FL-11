@@ -48,6 +48,9 @@ nav {
   max-width: 70%;
   height: 100%;
 }
+.menu-icon {
+  display: none;
+}
 ul {
   list-style: none;
   display: flex;
