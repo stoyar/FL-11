@@ -1,0 +1,194 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+:root {
+  --bg-color--dark: #0b192f;
+  --bg-color--header: #162b4d;
+  --link: #fff;
+  --link--hover: #b8b8b8;
+  --bg-footer-color: #162b4d;;
+}
+
+body {
+  font-family: roboto;
+}
+.post-1 {
+	background: #B71757;
+}
+.post-2 {
+	background: #0D7E71;
+}
+.post-3 {
+	background: #b1660e;
+}
+.post-4 {
+	background: #d12767;
+}
+.post-5 {
+	background: #2d95bb;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  grid-column: 1 / span2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  background-color: #162b4d;
+  padding: 0px 55px 0px 20px;
+}
+nav {
+  max-width: 40%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 34px 1rem 34px 1rem;
+
+}
+a:hover {
+  background-color: #283d5f;
+}
+h1, h2, h3 {
+  font-weight: 100;
+}
+h1 {
+  font-size: 36px;
+}
+h1 span {
+  color: #d12767;
+}
+body {
+  max-width: 1200px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: grid;
+  grid-template: 90px 1fr 110px / 2fr 25%;
+  background-color: #0b192f;
+  color: #fff;
+  font-weight: 300;
+}
+main {
+  padding: 20px 0px 20px;
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+div {
+  width: 100%;
+}
+.post {
+  display: flex;
+  flex-direction: row;
+}
+.post:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.post:nth-child(even) article {
+  flex-direction: row-reverse;
+}
+.post:nth-child(even) article>p {
+  padding-left: 0px;
+  padding-right: 20px;
+}
+.post:nth-child(even) {
+  text-align: right;
+}
+.post:nth-child(even) h2 {
+  padding: 10px 0px 0px 30px;
+}
+.post article {
+  display: flex;
+}
+.post article:hover, .post img:hover {
+  opacity: 0.5;
+}
+.post h2 {
+  line-height: 1;
+}
+.post p {
+  opacity: 0.6;
+}
+.post article>p, .post-5 article>p {
+  width: 30%;
+  padding: 1em 0.5em 1em 1em;
+  font-weight: 100;
+  font-size: 2vw;
+  text-align: center;
+}
+.post p span {
+  font-size: 4vw;
+}
+.post img {
+  max-width: 50%; 
+}
+.post-text h2 {
+  font-size: 3.5vw;
+}
+div.post-text {
+  padding: 1.8em 2em 1em 1.7em;
+}
+.post-text p {
+  font-size: 1.3vw;
+  margin: 25px 0 10px;
+  line-height: 1.6;
+}
+.post-5 article>p {
+  width: 10%;
+}
+.post-5 .post-text {
+  padding-bottom: 30px;
+}
+aside {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 100%;
+  max-width: 100%;
+  margin: 20px 0 0 20px;
+  color: #000;
+}
+aside img {
+  width: 100%;
+}
+.news article {
+  background-color: #fff;
+}
+.news h3 {
+  font-size: 28px;
+  font-weight: 300;
+  margin: 20px 25px 10px 25px;
+}
+.news p {
+  margin: 0px 25px 0px 25px;
+  padding-bottom: 30px;
+  line-height: 1.6;
+}
+footer {
+  grid-row: 3;
+  grid-column: 1 / span 3;
+  background-color: #162b4d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p {
+  padding: 0px 25px;
+  opacity: 0.6;
+  font-weight: 100;
+  line-height: 1.6;
+}
