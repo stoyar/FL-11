@@ -237,11 +237,9 @@ footer p {
     padding-top: 30px;
     padding-bottom: 30px;
   }
-  
   footer p {
     text-align: center;
   }
-  
 }
 /* for the phone screen */
 @media screen and (max-width: 480px) {
