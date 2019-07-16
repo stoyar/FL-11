@@ -1,5 +1,5 @@
 //task 0
-function getNumbers (string_num) {
+function getNumbers(string_num) {
    return string_num.match(/\d/g);
 }
 getNumbers('n1um3ber95');
@@ -21,3 +21,39 @@ function findTypes(...d_input) {
     return d_types;
 }
 findTypes(true, true, 'parampampam', 'ert', 1, 0, 1,0,0,1);
+
+//task 2
+function func(el) {
+    console.log(el);
+}
+function executeforEach(input_array, callback) {
+    for (let i = 0; i < input_array.length; i++) {
+        callback(input_array[i]);
+    }
+}
+executeforEach([1,0,1,0,1], func);
+
+//task 3
+/*
+function increaser(x) {
+    let three = 3;
+    return x + three;
+}
+function mapArray(inp_array) {
+    executeforEach(inp_array, increaser);
+    return inp_array;
+}
+mapArray([0, 1, 0]);*/
+
+
+function plus3 (el) {
+    const three = 3;
+    return el + three;
+}
+function mapArray (arr, foo) {
+    let newarr = [];    
+    executeforEach(arr, (counter) => newarr.push(foo(counter)) );      
+    return newarr;
+}
+let arr3 = mapArray([2, 5, 8, 12], plus3);
+console.log(arr3);
