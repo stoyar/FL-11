@@ -34,7 +34,6 @@ function executeforEach(input_array, callback) {
 executeforEach([1,0,1,0,1], func);
 
 //task 3
-/*
 function increaser(x) {
     let three = 3;
     return x + three;
@@ -43,17 +42,4 @@ function mapArray(inp_array) {
     executeforEach(inp_array, increaser);
     return inp_array;
 }
-mapArray([0, 1, 0]);*/
-
-
-function plus3 (el) {
-    const three = 3;
-    return el + three;
-}
-function mapArray (arr, foo) {
-    let newarr = [];    
-    executeforEach(arr, (counter) => newarr.push(foo(counter)) );      
-    return newarr;
-}
-let arr3 = mapArray([2, 5, 8, 12], plus3);
-console.log(arr3);
+mapArray([0, 1, 0]);
