@@ -1,2 +1,105 @@
-/* Your styles go here */
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
 
+ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+li>p {
+    display: inline-block;
+    margin: 1rem 0 1.5rem 2.5rem;
+    min-width: 13rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+li>img {
+    height: 2.5rem;
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    height: 2.2rem;
+    width: 0;
+}
+
+input[type="checkbox"]:before {
+    content: url(img/todo-s.png);
+    top: 0;
+    height: 2rem;
+}
+
+input[type="checkbox"]:checked::before{
+    content: url(img/done-s.png);
+} 
+
+input[type="button"] {
+    border-radius:  10px;
+    background-color: #daddda;
+    height: 2.2rem;
+    font-size: 1.5rem;
+}
+
+.add_button {
+    width: 10rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+}
+
+form {
+    width: 20rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+input[type="text"] {
+    width: 20rem;
+    height: 2.5rem;
+    border: 2px solid #989a98;
+    border-right-color: #eceeeb;
+    border-bottom-color: #eceeeb;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+input[type="text"]:hover {
+    cursor: text;
+}
+
+input[type="text"]:focus, input[type="button"] {
+    outline: none;
+}
+
+.cancel_button {
+    width: 6rem;
+}
+
+.save_button {
+    width: 11rem;
+}
+
+#add_page {
+    display: none;
+}
+
+#modify_page {
+    display: none;
+}

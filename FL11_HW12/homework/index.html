@@ -6,8 +6,30 @@
   <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
-  <div id="root"></div>
-
+  <div id="root">
+    <div class="wrapper" id="main_page">
+      <h1>Simple TODO application</h1>
+      <input class="add_button" type="button" value="Add new task" id="add_task">
+      <ul>
+      </ul>
+    </div>
+    <div class="wrapper" id="add_page">
+      <h1>Add task</h1>
+      <form method="post">
+        <input type="text" id="task_content">
+        <input class="cancel_button" type="button" value="Cancel">
+        <input class="save_button_add" type="button" value="Save changes">
+      </form>
+    </div>
+    <div class="wrapper" id="modify_page">
+      <h1>Modify item</h1>
+      <form method="post">
+        <input type="text" id="modify_content">
+        <input class="cancel_button" type="button" value="Cancel">
+        <input class="save_button_modify" type="button" value="Save changes">
+      </form>
+    </div>
+  </div>
   <script src="./src/app.js"></script>
 </body>
 </html>
