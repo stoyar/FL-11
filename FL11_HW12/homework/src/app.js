@@ -1,7 +1,7 @@
 const rootNode = document.getElementById('root');
 
-const fieldNewTask = document.getElementById('task_content');
-const fieldNodify = document.getElementById('modify_content');
+let fieldNewTask = document.getElementById('task_content');
+let fieldNodify = document.getElementById('modify_content');
 const btnAddTask = document.querySelector('.add_button');
 const btnsCancel = document.getElementsByClassName('cancel_button');
 const btnSaveAdd = document.querySelector('.save_button_add');
@@ -12,6 +12,7 @@ let adder = document.getElementById('add_page');
 let edit = document.getElementById('modify_page');
 let container = document.querySelector('ul');
 let contents = document.getElementsByTagName('p');
+let btnDelete = document.getElementsByTagName('img');
 
 let counter = 0;
 
@@ -38,6 +39,14 @@ const scanP = function() {
       edit.style.display='flex';
       location.href = 'index.html#modify_page';  
     });
+  }
+}
+
+const scanDel = function() {
+  for (let i = 0; i < btnDelete.length; i++){
+    btnDelete[i].addEventListener('click', function (){
+      console.log('Wait, deleting........................')
+    })
   }
 }
 
@@ -89,6 +98,9 @@ btnSaveAdd.addEventListener('click', () => {
   }
 })
 
+
+
 btnSaveModify.addEventListener('click', () => {
-  console.log('Too little time...')
+  console.log('Sorry, too little time(((')
+
 })
