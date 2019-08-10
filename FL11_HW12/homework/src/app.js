@@ -1,7 +1,7 @@
 const rootNode = document.getElementById('root');
 
 let fieldNewTask = document.getElementById('task_content');
-let fieldNodify = document.getElementById('modify_content');
+let fieldModify = document.getElementById('modify_content');
 const btnAddTask = document.querySelector('.add_button');
 const btnsCancel = document.getElementsByClassName('cancel_button');
 const btnSaveAdd = document.querySelector('.save_button_add');
@@ -12,42 +12,18 @@ let adder = document.getElementById('add_page');
 let edit = document.getElementById('modify_page');
 let container = document.querySelector('ul');
 let contents = document.getElementsByTagName('p');
-let btnDelete = document.getElementsByTagName('img');
+let btnsDelete = document.getElementsByTagName('img');
 
 let counter = 0;
+let onclickP = 0;
 
-const scanCheck = function() {
-  for (let i = 0; i < checkboxes.length; i++){
-    checkboxes[i].addEventListener('click', () => {
-    let id = checkboxes[i].id;
-    id++;
-    let p = document.getElementById(id);
-    if (checkboxes[i].getAttribute('checked')) {
-      p.style.backgroundColor = '#ccc';
-    } else {
-      p.style.backgroundColor = '#fff';
-    }
-    });
-  }
-}
-
-const scanP = function() {
-  for (let i = 0; i < contents.length; i++) {
-    contents[i].addEventListener('click', () => {
-      main.style.display='none';
-      adder.style.display='none';
-      edit.style.display='flex';
-      location.href = 'index.html#modify_page';  
-    });
-  }
-}
-
-const scanDel = function() {
-  for (let i = 0; i < btnDelete.length; i++){
-    btnDelete[i].addEventListener('click', function (){
-      console.log('Wait, deleting........................')
-    })
-  }
+const goToMain = () => {
+  main.style.display='flex';
+  adder.style.display='none';
+  edit.style.display='none';
+  location.href = 'index.html#main_page';
+  fieldNewTask.value = '';
+  fieldModify.value = '';
 }
 
 let addNew = function(value) {
@@ -64,22 +40,38 @@ let addNew = function(value) {
   li.appendChild(input);
   li.appendChild(p);
   li.appendChild(img);
-  scanCheck();
-  scanP();
+  input.addEventListener('click', (event) => {
+    let pp = event.target.nextElementSibling;
+    console.log(event.target.hasAttribute('checked'));
+    if (event.target.hasAttribute('checked')) {
+      pp.style.backgroundColor = '#fff';
+      event.target.removeAttribute('checked');
+    } else {
+      pp.style.backgroundColor = 'gray';
+      event.target.setAttribute('checked', 'checked');
+    }
+    });
+  p.addEventListener('click', (event) => {
+    onclickP = event.target.id;
+    main.style.display='none';
+    adder.style.display='none';
+    edit.style.display='flex';
+    location.href = 'index.html#modify_page';  
+  });
+  img.addEventListener('click', function(event) {
+    event.target.parentElement.remove();
+  });
 }
 
 for (let i = 0; i < btnsCancel.length; i++) {
   btnsCancel[i].addEventListener('click', () => {
-    main.style.display='flex';
-    adder.style.display='none';
-    edit.style.display='none';
-    location.href = 'index.html#main_page';
+    goToMain();
   });
 }
 
 btnAddTask.addEventListener('click', () => {
-  adder.style.display='flex';  
   main.style.display='none';
+  adder.style.display='flex';  
   edit.style.display='none';
   location.href = 'index.html#add_page';
 })
@@ -88,19 +80,18 @@ btnSaveAdd.addEventListener('click', () => {
   let task = fieldNewTask.value;
   if (task !== '') {
     addNew(task);
-    main.style.display='flex';
-    adder.style.display='none';
-    edit.style.display='none';
-    location.href = 'index.html#main_page';
-    fieldNewTask.value = '';
+    goToMain();
   } else {
     alert(`Task can't be empty`);
   }
 })
 
-
-
-btnSaveModify.addEventListener('click', () => {
-  console.log('Sorry, too little time(((')
-
+btnSaveModify.addEventListener('click', function() {
+  let p = document.getElementById(onclickP);
+  if (p.textContent !== fieldModify.value) {
+    p.innerHTML = fieldModify.value;
+    goToMain();
+  } else {
+    alert(`You can't add already exist task`)
+  }
 })
